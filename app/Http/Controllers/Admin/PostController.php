@@ -132,6 +132,18 @@ class PostController extends Controller
             $form_data['slug'] = $slugTitle;
         }
 
+        //image
+        if(isset($form_data['image'])){
+            if(!($form_data['image'] == $post->image)) {
+                $img_path = Storage::put('uploads', $form_data['image']);
+                $form_data['image'] = $img_path;
+            }
+        }
+        else{
+            $form_data['image'] = null;
+        }
+
+
         $post->update($form_data);
         $post->tags()->sync(isset($form_data['tags']) ? $form_data['tags'] : [] );
 

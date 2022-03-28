@@ -12,3 +12,21 @@ export default {
     name: "Header"
 }
 </script>
+
+<style lang="scss" scoped>
+nav{
+    list-style-type: none;
+    margin-left: 30px;
+
+    li{
+        display: inline-block;
+        padding: 15px;
+
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+    }
+}
+</style>

@@ -1,6 +1,9 @@
 <template>
     <div>
         <h3>{{post.title}}</h3>
+        <div v-if="post.image">
+            <img :src="`/storage/${post.image}`" alt="">
+        </div>
         <p>{{post.content}}</p>
         <span v-if="post.category">Categoria: {{post.category.name}}</span>
         <div v-if="post.tags">
