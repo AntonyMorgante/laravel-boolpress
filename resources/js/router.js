@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
     
 Vue.use(VueRouter);
 
-import Home from "./pages/Home";
 import About from "./pages/About";
 import SinglePost from "./pages/SinglePost";
 import PageNotFound from "./pages/PageNotFound";
@@ -14,7 +13,7 @@ const router = new VueRouter({
         {
             path: "/",
             name: "home",
-            component: Home
+            component: () => import('./pages/Home')
         },
         {
             path: "/chi-siamo",
