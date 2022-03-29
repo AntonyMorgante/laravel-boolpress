@@ -21,5 +21,27 @@
             @method("DELETE")
             <button type="submit" class="btn btn-danger">Elimina</button>
         </form>
+        
+        <h3 class="mt-4">Commenti al post</h3>
+        @forelse ($post->comments as $comment)
+            <div>{{$comment->name}}</div>
+            <div>{{$comment->content}}</div>
+            @if(!$comment->approved)
+                <form action="{{route('admin.comments.update', $comment->id)}}" METHOD="POST">
+                    @csrf
+                    @METHOD("PATCH")
+                    <button type="submit" class="btn btn-success">Approva</button>
+                </form>
+            @else   
+                Commento Approvato
+            @endif
+            <form action="{{route('admin.comments.destroy', $comment->id)}}" METHOD="POST">
+                    @csrf
+                    @METHOD("DELETE")
+                    <button type="submit" class="btn btn-danger">Elimina</button>
+                </form>
+        @empty
+            Al momento non c'è alcun commento.
+        @endforelse
     </div>
 @endsection

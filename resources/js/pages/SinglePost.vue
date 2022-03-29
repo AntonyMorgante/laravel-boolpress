@@ -11,6 +11,17 @@
                 Argomenti: <span v-for="(tag,index) in post.tags" :key="index">{{tag.name}}</span>
             </div>
         </div>   
+        <div class="comments">
+            Commenti all'articolo:
+            <div v-if="post.comments.length>0">
+                <div class="comment" v-for="(comment,index) in post.comments" :key="index">
+                    <div v-if="comment.approved">
+                        <h4>{{comment.name}}</h4>
+                        {{comment.content}}
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="add-comment">
             <p>Aggiungi un commento...</p>
             <form @submit.prevent="addComment()">

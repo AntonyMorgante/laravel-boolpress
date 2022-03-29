@@ -2216,6 +2216,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SinglePost",
   data: function data() {
@@ -4182,6 +4193,30 @@ var render = function () {
               }),
             ],
             2
+          )
+        : _vm._e(),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "comments" }, [
+      _vm._v("\n        Commenti all'articolo:\n        "),
+      _vm.post.comments.length > 0
+        ? _c(
+            "div",
+            _vm._l(_vm.post.comments, function (comment, index) {
+              return _c("div", { key: index, staticClass: "comment" }, [
+                comment.approved
+                  ? _c("div", [
+                      _c("h4", [_vm._v(_vm._s(comment.name))]),
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(comment.content) +
+                          "\n                "
+                      ),
+                    ])
+                  : _vm._e(),
+              ])
+            }),
+            0
           )
         : _vm._e(),
     ]),
