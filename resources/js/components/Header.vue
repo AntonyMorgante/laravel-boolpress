@@ -1,8 +1,10 @@
 <template>
     <header>
         <nav>
-            <li><router-link :to="{name:'home'}">HOME</router-link></li>
-            <li><router-link :to="{name:'about'}">CHI SIAMO</router-link></li>
+            <li><router-link :to="{name:'home'}">Home</router-link></li>
+            <li><router-link :to="{name:'about'}">Chi siamo</router-link></li>         
+            <li><router-link :to="{name:'categories'}">Categorie</router-link></li>
+            <li class="right"><a href="/admin/">Area riservata</a></li>
         </nav>
     </header>
 </template>
@@ -16,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 nav{
     list-style-type: none;
-    margin-left: 30px;
+    margin: 0 30px;
 
     li{
         display: inline-block;
@@ -24,9 +26,15 @@ nav{
 
         a{
             text-decoration: none;
+            text-transform: uppercase;
             color: black;
             font-size: 20px;
         }
     }
+
+    .right{
+        float:right;
+    }
+
 }
 </style>

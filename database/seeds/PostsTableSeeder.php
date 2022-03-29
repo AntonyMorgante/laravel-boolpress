@@ -18,7 +18,7 @@ class PostsTableSeeder extends Seeder
         for ($i=0; $i<5; $i++){
             $user = User::all()->first();
             $user_id = $user['id'];
-            $cat=rand(1,5);
+            $cat=rand(6,10);
 
             $post = new Post();
             $post->user_id = $user_id;

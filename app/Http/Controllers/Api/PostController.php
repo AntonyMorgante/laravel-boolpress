@@ -9,12 +9,6 @@ use App\Post;
 class PostController extends Controller
 {
     public function index(){
-        // $posts= Post::all();
-        // return response()->json([
-        //     "success" => true,
-        //     "data" => $posts
-        // ]);
-
         $posts = Post::with("category","tags")->get();
 
         return response()->json($posts);
